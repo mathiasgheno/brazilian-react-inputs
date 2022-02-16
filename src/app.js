@@ -6,6 +6,7 @@ import {
   cepMask,
   pisMask,
   dataMask,
+  numberMask,
 } from './utils/masks'
 import styled from 'styled-components'
 
@@ -16,12 +17,21 @@ function App() {
   const [zipcode, setZipcode] = useState('')
   const [pis, setPis] = useState('')
   const [data, setData] = useState('')
+  const [numero, setNumber] = useState('')
 
   return (
     <Container>
       <h1>Form com inputs masks</h1>
       <form>
-        <Label htmlFor='cpf'>CPF: 00.000.000-00</Label>
+        <Label htmlFor='cpf'>Numero: 000,00</Label>
+        <Input
+          type='text'
+          name='numero'
+          id='numero'
+          value={numberMask(numero)}
+          onChange={(e) => setNumber(e.target.value)}
+        />
+        <Label htmlFor='numero'>CPF: 00.000.000-00</Label>
         <Input
           type='text'
           name='cpf'
@@ -91,3 +101,9 @@ const Input = styled.input`
 `
 
 export default App
+
+// TODO porcentagem
+// TODO Maior que
+// TODO Menor que
+// TODO dinheiro
+// TODO Numerico com
