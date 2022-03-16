@@ -9,6 +9,8 @@ import {
   numberMask,
 } from './utils/masks'
 import styled from 'styled-components'
+import { InputCpf } from "./components/InputCpf/InputCpf";
+import { InputCnpj } from "./components/InputCnpj/InputCnpj";
 
 function App() {
   const [cpf, setCPF] = useState('')
@@ -23,7 +25,7 @@ function App() {
     <Container>
       <h1>Form com inputs masks</h1>
       <form>
-        <Label htmlFor='cpf'>Numero: 000,00</Label>
+        <Label htmlFor='numero'>Numero: 000,00</Label>
         <Input
           type='text'
           name='numero'
@@ -31,22 +33,11 @@ function App() {
           value={numberMask(numero)}
           onChange={(e) => setNumber(e.target.value)}
         />
-        <Label htmlFor='numero'>CPF: 00.000.000-00</Label>
-        <Input
-          type='text'
-          name='cpf'
-          id='cpf'
-          value={cpfMask(cpf)}
-          onChange={(e) => setCPF(e.target.value)}
-        />
-        <Label htmlFor='cnpj'>CNPJ: 00.000.000/0000-00</Label>
-        <Input
-          type='text'
-          name='cnpj'
-          id='cnpj'
-          value={cnpjMask(cnpj)}
-          onChange={(e) => setCNPJ(e.target.value)}
-        />
+
+        <InputCpf onChange={cpf => setCPF(cpf)} />
+        <br/>
+        <InputCnpj onChange={cnpj => setCNPJ(cnpj)} />
+
         <Label htmlFor='phone'>Telefone: (00) 00000-0000</Label>
         <Input
           type='text'
