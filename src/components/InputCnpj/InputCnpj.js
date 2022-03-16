@@ -1,15 +1,15 @@
 import React from 'react';
-import {cnpjMask} from "../../utils/masks";
+import { cnpjMask } from '../../utils/masks';
 
 const _InputCnpj = ({
   valor = '',
   onChange,
 }) => {
-  const [cnpj, setCnpj] = React.useState(valor);
+  const [ cnpj, setCnpj ] = React.useState(valor);
 
   React.useEffect(() => {
     onChange(cnpj);
-  }, [cnpj]);
+  }, [ cnpj ]);
 
   return (
     <>

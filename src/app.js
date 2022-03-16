@@ -11,11 +11,12 @@ import {
 import styled from 'styled-components'
 import { InputCpf } from "./components/InputCpf/InputCpf";
 import { InputCnpj } from "./components/InputCnpj/InputCnpj";
+import {InputTelefone} from "./components";
 
 function App() {
   const [cpf, setCPF] = useState('')
   const [cnpj, setCNPJ] = useState('')
-  const [phone, setPhone] = useState('')
+  const [telefone, setTelefone] = useState('')
   const [zipcode, setZipcode] = useState('')
   const [pis, setPis] = useState('')
   const [data, setData] = useState('')
@@ -37,15 +38,9 @@ function App() {
         <InputCpf onChange={cpf => setCPF(cpf)} />
         <br/>
         <InputCnpj onChange={cnpj => setCNPJ(cnpj)} />
-
-        <Label htmlFor='phone'>Telefone: (00) 00000-0000</Label>
-        <Input
-          type='text'
-          name='phone'
-          id='phone'
-          value={phoneMask(phone)}
-          onChange={(e) => setPhone(e.target.value)}
-        />
+        <br/>
+        <InputTelefone onChange={telefone => setTelefone(telefone)} />
+        <br/>
         <Label htmlFor='zipcode'>CEP: 00000-000</Label>
         <Input
           type='text'

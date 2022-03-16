@@ -7,3 +7,4 @@ test.todo('deve aplicar foco no input caso label seja selecionado');
 test.todo('deve exibir mensagem de inválido');
 test.todo('deve desabilitar o input');
 test.todo('deve executar o onChange');
+test.todo('deve renderizar conteúdo do label conforme parametro');
