@@ -1,7 +1,7 @@
 import React from 'react';
 import { cpfMask } from '../../utils/masks';
 
-const _InputCpf = ({
+export const InputCpf = ({
   valor = '',
   onChange,
 }) => {
@@ -25,5 +25,3 @@ const _InputCpf = ({
     </>
   )
 };
-
-export const InputCpf = React.memo(_InputCpf);

@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
-import {
-  cpfMask,
-  cnpjMask,
-  phoneMask,
-  cepMask,
-  pisMask,
-  dataMask,
-  numberMask,
-} from './utils/masks'
+import { numberMask } from './utils/masks'
 import styled from 'styled-components'
-import { InputCpf } from "./components/InputCpf/InputCpf";
-import { InputCnpj } from "./components/InputCnpj/InputCnpj";
-import {InputTelefone} from "./components";
+import {
+  InputCpf,
+  InputCnpj,
+  InputTelefone,
+  InputCep,
+  InputData,
+  InputPis,
+} from "./components";
 
 function App() {
   const [cpf, setCPF] = useState('')
@@ -35,37 +32,20 @@ function App() {
           onChange={(e) => setNumber(e.target.value)}
         />
 
-        <InputCpf onChange={cpf => setCPF(cpf)} />
+        <InputCpf onChange={cpf => setCPF(cpf)}/>
         <br/>
         <InputCnpj onChange={cnpj => setCNPJ(cnpj)} />
         <br/>
         <InputTelefone onChange={telefone => setTelefone(telefone)} />
         <br/>
-        <Label htmlFor='zipcode'>CEP: 00000-000</Label>
-        <Input
-          type='text'
-          id='zipcode'
-          name='zipcode'
-          value={cepMask(zipcode)}
-          onChange={(e) => setZipcode(e.target.value)}
-        />
-        <Label htmlFor='pis'>PIS: 000.00000.00-0</Label>
-        <Input
-          type='text'
-          name='pis'
-          id='pis'
-          value={pisMask(pis)}
-          onChange={(e) => setPis(e.target.value)}
-        />
-        <Label htmlFor='data'>Data: 00/00/0000</Label>
-        <Input
-          type='text'
-          name='data'
-          id='data'
-          value={dataMask(data)}
-          onChange={(e) => setData(e.target.value)}
-        />
+        <InputPis onChange={pis => setPis(pis)} />
+        <br/>
+        <InputCep onChange={cep => setZipcode(cep)} />
+        <br/>
+        <InputData onChange={data => setData(data)} />
+        <br/>
       </form>
+      <pre>{JSON.stringify({cpf, cnpj, telefone, zipcode, pis, data})}</pre>
     </Container>
   )
 }

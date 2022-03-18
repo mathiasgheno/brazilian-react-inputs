@@ -1,7 +1,7 @@
 import React from 'react';
 import { cnpjMask } from '../../utils/masks';
 
-const _InputCnpj = ({
+export const InputCnpj = ({
   valor = '',
   onChange,
 }) => {
@@ -25,5 +25,3 @@ const _InputCnpj = ({
     </>
   );
 }
-
-export const InputCnpj = React.memo(_InputCnpj);

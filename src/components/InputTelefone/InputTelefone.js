@@ -1,7 +1,7 @@
 import React from 'react';
 import { phoneMask } from '../../utils/masks';
 
-const _InputTelefone = ({ valor = '', onChange }) => {
+export const InputTelefone = ({ valor = '', onChange }) => {
   const [ telefone, setTelefone ] = React.useState(valor);
 
   React.useEffect(() => {
@@ -22,5 +22,3 @@ const _InputTelefone = ({ valor = '', onChange }) => {
     </>
   )
 }
-
-export const InputTelefone = React.memo(_InputTelefone);
