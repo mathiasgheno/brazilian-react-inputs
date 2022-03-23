@@ -5,8 +5,8 @@ export const InputTelefone = ({ valor = '', onChange }) => {
   const [ telefone, setTelefone ] = React.useState(valor);
 
   React.useEffect(() => {
-    onChange(telefone);
-  }, [ telefone ]);
+    setTelefone(valor);
+  }, [ valor ]);
 
   return (
     <>
@@ -17,7 +17,10 @@ export const InputTelefone = ({ valor = '', onChange }) => {
         name='phone'
         id='phone'
         value={phoneMask(telefone)}
-        onChange={(e) => setTelefone(e.target.value)}
+        onChange={(e) => {
+          setTelefone(e.target.value);
+          onChange(e);
+        }}
       />
     </>
   )

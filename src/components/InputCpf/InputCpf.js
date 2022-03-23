@@ -8,8 +8,8 @@ export const InputCpf = ({
   const [ cpf, setCpf ] = React.useState(valor);
 
   React.useEffect(() => {
-    onChange(cpf);
-  }, [ cpf ]);
+    setCpf(valor);
+  }, [ valor ]);
 
   return (
     <>
@@ -20,7 +20,10 @@ export const InputCpf = ({
         name='cpf'
         id='cpf'
         value={cpfMask(cpf)}
-        onChange={(e) => setCpf(e.target.value)}
+        onChange={(e) => {
+          setCpf(e.target.value);
+          onChange(e);
+        }}
       />
     </>
   )

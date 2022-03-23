@@ -8,8 +8,8 @@ export const InputCnpj = ({
   const [ cnpj, setCnpj ] = React.useState(valor);
 
   React.useEffect(() => {
-    onChange(cnpj);
-  }, [ cnpj ]);
+    setCnpj(valor);
+  }, [ valor ]);
 
   return (
     <>
@@ -20,7 +20,10 @@ export const InputCnpj = ({
         name='cnpj'
         id='cnpj'
         value={cnpjMask(cnpj)}
-        onChange={(e) => setCnpj(e.target.value)}
+        onChange={(e) => {
+          setCnpj(e.target.value);
+          onChange(e);
+        }}
       />
     </>
   );
