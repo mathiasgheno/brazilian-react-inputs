@@ -18,8 +18,8 @@ export const InputCep = ({ valor = '', onChange }) => {
         name='zipcode'
         value={cepMask(cep)}
         onChange={(e) => {
-          onChange(e);
-          setCep(e.target.value)
+          if(onChange) onChange(e);
+          setCep(e.target.value);
         }}
       />
     </>
