@@ -11,7 +11,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: actions/setup-node@v3
-    - run: npm run build-storybook
+    - name: 'Installing dependencies'
+      run: npm i
+    - name: 'Storybook'
+      run: npm run build-storybook
     - uses: mathiasgheno/s3-on-demand-action@main
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
