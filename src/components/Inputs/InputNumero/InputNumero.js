@@ -1,5 +1,5 @@
 import React from 'react';
-import { numberMask } from '../../utils/masks';
+import { numberMask } from '../../../utils/masks';
 
 export const InputNumero = ({ onChange, valor = '' }) => {
   const [numero, setNumero] = React.useState(valor);

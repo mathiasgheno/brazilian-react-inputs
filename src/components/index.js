@@ -1,10 +1,10 @@
-import { InputCnpj } from './InputCnpj/InputCnpj';
-import { InputCpf } from './InputCpf/InputCpf';
-import { InputTelefone } from './InputTelefone/InputTelefone';
-import { InputCep } from './InputCep/InputCep';
-import { InputData } from './InputData/InputData';
-import { InputPis } from './InputPis/InputPis';
-import { InputNumero } from './InputNumero/InputNumero';
+import { InputCnpj } from './Inputs/InputCnpj/InputCnpj';
+import { InputCpf } from './Inputs/InputCpf/InputCpf';
+import { InputTelefone } from './Inputs/InputTelefone/InputTelefone';
+import { InputCep } from './Inputs/InputCep/InputCep';
+import { InputData } from './Inputs/InputData/InputData';
+import { InputPis } from './Inputs/InputPis/InputPis';
+import { InputNumero } from './Inputs/InputNumero/InputNumero';
 
 export {
   InputCpf,

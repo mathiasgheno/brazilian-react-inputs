@@ -1,5 +1,5 @@
 import React from 'react';
-import { cnpjMask } from '../../utils/masks';
+import { cnpjMask } from '../../../utils/masks';
 
 export const InputCnpj = ({
   valor = '',

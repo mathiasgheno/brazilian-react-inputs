@@ -1,5 +1,5 @@
 import React from 'react';
-import { cpfMask } from '../../utils/masks';
+import { cpfMask } from '../../../utils/masks';
 
 export const InputCpf = ({
   valor = '',

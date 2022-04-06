@@ -1,5 +1,5 @@
 import React from 'react';
-import { dataMask } from '../../utils/masks';
+import { dataMask } from '../../../utils/masks';
 
 export const InputData = ({ valor = '', onChange }) => {
   const [data, setData] = React.useState(valor);
