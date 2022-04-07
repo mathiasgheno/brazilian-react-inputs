@@ -21,3 +21,4 @@ Para adicional explicações, veja [esse video](https://youtu.be/r-8isv_TnVA?lis
 - [ ] Isolated publish
 - [ ] add Socket
 - [ ] add Sonar
+- [ ] Add state "information about" at input
