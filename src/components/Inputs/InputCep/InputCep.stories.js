@@ -14,6 +14,7 @@ export const WithValue = Template.bind({});
 
 WithValue.args = {
   valor: '00000000',
+  valid: true,
 }
 
 export const Required = Template.bind({});
@@ -26,6 +27,11 @@ export const InvalidWithMessage = Template.bind({});
 InvalidWithMessage.args = {
   invalid: true,
   message: 'Invalid Input',
+}
+
+export const withInfo = Template.bind({});
+withInfo.args = {
+  info: true,
 }
 
 
