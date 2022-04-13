@@ -1,25 +1,14 @@
-import styled, { css } from 'styled-components';
-
-export const Message = styled.span`
-  font-size: var(--font-size-message);
-  color: red;
-`;
-
-const InputInvalid = css`
-  border: 1px solid red;
-`;
-
-export const InputValid = css`
-  border: 1px solid green;
-`;
+import styled from 'styled-components';
+import { Invalid, Valid, Warning } from '../Inputs.styled';
 
 export const Input = styled.input`
   border-radius: var(--border-radius-input);
   border: var(--border-input);
   height: var(--height-input);
   
-  ${({invalid}) => invalid && InputInvalid};
-  ${({valid}) => valid && InputValid};
+  ${({invalid}) => invalid && Invalid};
+  ${({valid}) => valid && Valid};
+  ${({warning}) => warning && Warning};
 `;
 
 export const Container = styled.div`

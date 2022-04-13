@@ -23,14 +23,26 @@ Required.args = {
   required: true,
 }
 
-export const InvalidWithMessage = Template.bind({});
-InvalidWithMessage.args = {
-  invalid: true,
-  message: 'Invalid Input',
+export const WithMessageInvalid = Template.bind({});
+WithMessageInvalid.args = {
+  status: 'invalid',
+  message: 'Message',
 }
 
-export const withInfo = Template.bind({});
-withInfo.args = {
+export const WithMessageValid = Template.bind({});
+WithMessageValid.args = {
+  status: 'valid',
+  message: 'Message',
+}
+
+export const WithMessageWarning = Template.bind({});
+WithMessageWarning.args = {
+  status: 'warning',
+  message: 'Message',
+}
+
+export const WithInfo = Template.bind({});
+WithInfo.args = {
   info: true,
 }
 
