@@ -1,8 +1,8 @@
 import React from 'react';
 import { cepMask } from '../../../utils/masks';
-import { Container, InfoBox, Input } from './InputCep.styled';
-import { Message } from '../Inputs.styled';
-import { ReactComponent as Info } from '../icons/circle-info-solid.svg';
+import { Container, Input } from './InputCep.styled';
+import { Label, Message} from '../Inputs.styled';
+import { TooltipInfo } from '../TooltipInfo/TooltipInfo';
 
 export const InputCep = ({
    valor = '',
@@ -26,7 +26,7 @@ export const InputCep = ({
 
   return (
     <Container>
-      <label htmlFor={componentId}>CEP {info && <InfoBox><Info /></InfoBox>}{required && (<span>*</span>)}</label>
+      <Label htmlFor={componentId}>CEP {info && <TooltipInfo />}{required && (<span>*</span>)}</Label>
       <Input
         type='text'
         id={componentId}
