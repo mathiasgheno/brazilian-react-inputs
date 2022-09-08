@@ -16,7 +16,7 @@ export const InputNumero = ({ onChange, valor = '' }) => {
         type='text'
         name='numero'
         id='numero'
-        value={numberMask(numero)}
+        value={numberMask(numero, 0)}
         onChange={(e) => {
           setNumero(e.target.value);
           onChange(e);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { cepMask } from '../../../utils/masks';
 import { Container, Input } from './InputCep.styled';
-import { Label, Message} from '../Inputs.styled';
+import { Label, Message } from '../Inputs.styled';
 import { TooltipInfo } from '../TooltipInfo/TooltipInfo';
 
 export const InputCep = ({
