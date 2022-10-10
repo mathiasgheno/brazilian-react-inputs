@@ -3,22 +3,16 @@
 [![Deploy](https://github.com/mathiasgheno/brazilian-react-inputs/actions/workflows/deploy.yml/badge.svg)](https://github.com/mathiasgheno/brazilian-react-inputs/actions/workflows/deploy.yml)
 <a href="http://mathiasgheno-brazilian-react-inputs-master.s3-website-sa-east-1.amazonaws.com" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
 
+Máscaras para formulário em React.js sem utilização de libs adicionais. Nesse projeto você irá encontrar components de input altamente coesos e sem acomplamento com outras libs.
 
+- CPF
+- CNPJ
+- CEP
+- PIS
+- Telefone
+- Input Numerico (Inteiro e Decimal)
 
-Máscaras para formulário em React.js sem utilização de libs adicionais.
+Você deve utilizar esse projeto como um template, e não como uma lib pronta para ser utilizada. Você pode utilizar o [Storybook](http://mathiasgheno-brazilian-react-inputs-master.s3-website-sa-east-1.amazonaws.com) para visualizar os componentes e como utilizar e deve copiar o component para dentro do seu projeto para aplicar os ajustes necessários para seu projeto (validação, visual, configurações de acessibilidade e etc).
 
-Esse repositório contêm exemplo de inputs de textos com máscaras para: CPF, CNPJ, Telefone, PIS, CEP e Data.
+Projeto inspirado por [esse video](https://youtu.be/r-8isv_TnVA?list=TLPQMTYxMDIwMjFP9hVSVfWBpw). 
 
-Para adicional explicações, veja [esse video](https://youtu.be/r-8isv_TnVA?list=TLPQMTYxMDIwMjFP9hVSVfWBpw). 
-
-
-# TODO
-
-- [ ] Style os Component
-- [ ] Finish Common Interface
-- [ ] Publish NPM
-- [ ] Integration Tests
-- [ ] Isolated publish
-- [ ] add Socket
-- [ ] add Sonar
-- [ ] Add state "information about" at input

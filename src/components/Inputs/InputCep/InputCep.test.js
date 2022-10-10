@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react'
-import { InputCep } from './InputCep';
+import { render } from '@testing-library/react'
 import * as stories from './InputCep.stories';
 
 import { composeStories } from '@storybook/testing-react';
@@ -14,7 +13,5 @@ describe('InputCep', () => {
 
   test('should render WithValue state', () => {
     render(<WithValue />);
-    screen.debug();
-    // console.log(screen.getByRole('zipcode'));
   });
 })

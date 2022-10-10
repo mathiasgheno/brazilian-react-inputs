@@ -3,7 +3,7 @@ import { cnpjMask } from '../../../utils/masks';
 
 export const InputCnpj = ({
   valor = '',
-  onChange,
+  onChange = () => {},
 }) => {
   const [ cnpj, setCnpj ] = React.useState(valor);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { pisMask } from '../../../utils/masks';
 
-export const InputPis = ({ valor = '', onChange }) => {
+export const InputPis = ({ valor = '', onChange = () => {} }) => {
   const [ pis, setPis ] = React.useState(valor);
 
   React.useEffect(() => {

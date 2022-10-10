@@ -3,7 +3,7 @@ import { cpfMask } from '../../../utils/masks';
 
 export const InputCpf = ({
   valor = '',
-  onChange,
+  onChange = () => {},
 }) => {
   const [ cpf, setCpf ] = React.useState(valor);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { phoneMask } from '../../../utils/masks';
 
-export const InputTelefone = ({ valor = '', onChange }) => {
+export const InputTelefone = ({ valor = '', onChange = () => {} }) => {
   const [ telefone, setTelefone ] = React.useState(valor);
 
   React.useEffect(() => {
