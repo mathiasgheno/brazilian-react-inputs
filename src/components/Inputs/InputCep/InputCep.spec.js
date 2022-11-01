@@ -4,7 +4,7 @@ import * as stories from './InputCep.stories';
 
 import { composeStories } from '@storybook/testing-react';
 
-const { Normal, WithValue } = composeStories(stories);
+const { Normal, ComValor } = composeStories(stories);
 
 describe('InputCep', () => {
   test('should render Normal state', () => {
@@ -12,6 +12,6 @@ describe('InputCep', () => {
   });
 
   test('should render WithValue state', () => {
-    render(<WithValue />);
+    render(<ComValor />);
   });
 })

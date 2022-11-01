@@ -1,10 +1,11 @@
-import { InputData } from './InputData';
+import * as stories from './InputData.stories';
+import { composeStories } from '@storybook/testing-react';
+import { render } from '@testing-library/react';
 
-export default {
-  title: 'InputData',
-  component: InputData,
-}
+const { Normal } = composeStories(stories);
 
-const Template = (props) => <InputData {...props} />
-
-export const Normal = Template.bind({});
+describe('InputData', () => {
+  test('should render Normal state', () => {
+    render(<Normal />);
+  });
+});

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import {
   InputCpf,
   InputCnpj,
@@ -42,10 +41,5 @@ function App() {
     </Container>
   )
 }
-
-const Container = styled.div`
-  margin: 0 auto;
-  width: 700px;
-`
 
 export default App

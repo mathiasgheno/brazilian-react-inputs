@@ -1,7 +1,27 @@
 import React from 'react';
-import { numberMask } from '../../../utils/masks';
 
-export const InputNumero = ({ onChange, valor = '' }) => {
+export function numberMask(value, decimal = 2) {
+
+  const decimalReg = new RegExp(`(\\d+)(\\d{${decimal}}$)`);
+
+  let finalMask = value.replace(/,/g, '').replace(/\./g, '')
+
+  finalMask = decimal > 0 ? finalMask.replace(decimalReg, '$1,$2') : finalMask;
+
+  const milharReg = /(\d{1,})(\d{3})/g
+
+  while(milharReg.test(finalMask)) {
+    finalMask = finalMask.replace(milharReg, '$1.$2')
+  }
+
+  return finalMask;
+}
+
+export const InputNumero = ({
+  onChange = () => {},
+  valor = '',
+  casasDecimais = 2,
+}) => {
   const [numero, setNumero] = React.useState(valor);
 
   React.useEffect(() => {
@@ -16,7 +36,7 @@ export const InputNumero = ({ onChange, valor = '' }) => {
         type='text'
         name='numero'
         id='numero'
-        value={numberMask(numero, 0)}
+        value={numberMask(numero, casasDecimais)}
         onChange={(e) => {
           setNumero(e.target.value);
           onChange(e);

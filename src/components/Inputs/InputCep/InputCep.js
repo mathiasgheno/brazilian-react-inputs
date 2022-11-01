@@ -1,6 +1,11 @@
 import React from 'react';
-import { cepMask } from '../../../utils/masks';
-import { Label, Message } from '../Inputs.styled';
+
+export function cepMask (value) {
+  return value
+    .replace(/\D/g, '')
+    .replace(/(\d{5})(\d)/, '$1-$2')
+    .replace(/(-\d{3})\d+?$/, '$1')
+}
 
 export const InputCep = ({
    valor = '',
@@ -20,9 +25,11 @@ export const InputCep = ({
 
   return (
     <div>
-      <Label htmlFor={componentId}>CEP</Label>
+      <label htmlFor={componentId}>CEP</label>
+      <br />
       <input
         type='text'
+        placeholder='00000-000'
         id={componentId}
         name='zipcode'
         value={cepMask(cep)}
