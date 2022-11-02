@@ -1,11 +1,18 @@
-test.todo('deve aplicar mascara caso ocorra paste de 00000000000000');
-test.todo('deve aplicar mascara caso ocorra paste de 00.000.000/0000-00');
-test.todo('deve aplicar mascara quando usuário estiver digitando');
-test.todo('deve inicializar com valor zerado');
-test.todo('deve possibilitar a renderização de mais de um input do mesmo tipo');
-test.todo('deve aplicar foco no input caso label seja selecionado');
-test.todo('deve exibir mensagem de inválido');
-test.todo('deve renderizar conteúdo do label conforme parametro');
-test.todo('deve desabilitar o input');
-test.todo('deve executar o onChange');
-test.todo('deve exibir * quando input for exigido');
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import * as stories from './InputCnpj.stories';
+import { composeStories } from '@storybook/testing-react';
+
+const { Normal, ComValor } = composeStories(stories);
+
+describe('InputCnpj', () => {
+  test('deve renderizar', () => {
+    render(<Normal />);
+  });
+
+  test('deve renderizar com valor pré-definido', () => {
+    render(<ComValor />);
+    const cnpj = screen.getByLabelText(/cnpj/i);
+    expect(cnpj.value).toBe('37.891.756/0001-88');
+  });
+});

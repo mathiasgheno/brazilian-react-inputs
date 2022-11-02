@@ -8,3 +8,8 @@ export default {
 const Template = (props) => <InputCnpj {...props} />
 
 export const Normal = Template.bind({});
+
+export const ComValor = Template.bind({});
+ComValor.args = {
+  valor: '37891756000188',
+};

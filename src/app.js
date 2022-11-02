@@ -19,7 +19,7 @@ function App() {
   const [numero, setNumber] = useState('')
 
   return (
-    <Container>
+    <div>
       <h1>Form com inputs masks</h1>
       <form>
         <InputNumero onChange={event => setNumber(event.target.value)}/>
@@ -38,7 +38,7 @@ function App() {
         <br/>
       </form>
       <pre>{JSON.stringify({cpf, cnpj, telefone, zipcode, pis, data, numero})}</pre>
-    </Container>
+    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import * as stories from './InputCep.stories';
 
 import { composeStories } from '@storybook/testing-react';
@@ -13,5 +13,7 @@ describe('InputCep', () => {
 
   test('should render WithValue state', () => {
     render(<ComValor />);
+    const cep = screen.getByLabelText(/cep/i);
+    expect(cep.value).toBe('00000-000');
   });
 })

@@ -15,6 +15,7 @@ export const InputCnpj = ({
   onChange = () => {},
 }) => {
   const [ cnpj, setCnpj ] = React.useState(valor);
+  const componentId = React.useId();
 
   React.useEffect(() => {
     setCnpj(valor);
@@ -22,12 +23,14 @@ export const InputCnpj = ({
 
   return (
     <>
-      <label htmlFor='cnpj'>CNPJ: 00.000.000/0000-00</label>
+      <label htmlFor={componentId}>CNPJ</label>
       <br/>
       <input
+        data-testid="input_cnpj"
         type='text'
         name='cnpj'
-        id='cnpj'
+        id={componentId}
+        placeholder="00.000.000/0000-00"
         value={cnpjMask(cnpj)}
         onChange={(e) => {
           setCnpj(e.target.value);
