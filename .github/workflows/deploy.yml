@@ -13,6 +13,8 @@ jobs:
     - uses: actions/setup-node@v3
     - name: 'Installing dependencies'
       run: npm i
+    - name: 'Testing'
+      run: npm test
     - name: 'Storybook'
       run: npm run build-storybook
     - uses: mathiasgheno/s3-on-demand-action@main
