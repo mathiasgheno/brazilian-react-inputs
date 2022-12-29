@@ -20,9 +20,10 @@ export const InputData = ({
 
   return (
     <>
-      <label htmlFor='data'>Data: 00/00/0000</label>
+      <label htmlFor='data'>Data</label>
       <br/>
       <input
+        data-testid="input_data"
         type='text'
         name='data'
         id='data'

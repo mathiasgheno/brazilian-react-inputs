@@ -8,3 +8,8 @@ export default {
 const Template = (props) => <InputData {...props} />
 
 export const Normal = Template.bind({});
+
+export const ComValor = Template.bind({});
+ComValor.args = {
+  valor: '24/11/2022',
+}
