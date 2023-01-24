@@ -13,9 +13,10 @@ export function cnpjMask (value) {
 export const InputCnpj = ({
   valor = '',
   onChange = () => {},
+  desabilitado = false,
 }) => {
   const [ cnpj, setCnpj ] = React.useState(valor);
-  const componentId = React.useId();
+  const id = React.useId();
 
   React.useEffect(() => {
     setCnpj(valor);
@@ -23,14 +24,15 @@ export const InputCnpj = ({
 
   return (
     <>
-      <label htmlFor={componentId}>CNPJ</label>
+      <label htmlFor={id}>CNPJ</label>
       <br/>
       <input
         data-testid="input_cnpj"
         type='text'
         name='cnpj'
-        id={componentId}
+        id={id}
         placeholder="00.000.000/0000-00"
+        disabled={desabilitado}
         value={cnpjMask(cnpj)}
         onChange={(e) => {
           setCnpj(e.target.value);

@@ -13,3 +13,9 @@ export const ComValor = Template.bind({});
 ComValor.args = {
   valor: '37891756000188',
 };
+
+export const Desabilitado = Template.bind({});
+Desabilitado.args = {
+  ...ComValor.args,
+  desabilitado: true,
+}
