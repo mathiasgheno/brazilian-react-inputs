@@ -3,13 +3,9 @@ import { composeStories } from '@storybook/testing-react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-const { Normal, ComValor } = composeStories(stories);
+const { Normal, ComValor, Desabilitado } = composeStories(stories);
 
 describe('InputData', () => {
-  test('deve renderizar normalmente', () => {
-    render(<Normal />);
-  });
-
   function changeInputData(data) {
     //veja https://github.com/sanniassin/react-input-mask/issues/174#issuecomment-804961229
     const input = screen.getByTestId('input_data');
@@ -17,10 +13,21 @@ describe('InputData', () => {
     fireEvent.change(input, { target: { value: data } });
   }
 
+  test('deve renderizar normalmente', () => {
+    render(<Normal />);
+  });
+
   test('deve renderizar com valor', () => {
     render(<ComValor />);
     const input = screen.getByTestId('input_data');
     expect(input.getAttribute('value')).toBe('24/11/2022');
+  });
+
+  test('não deve alterar data quando input estiver desabilitado', () => {
+    render(<Desabilitado />);
+    const input = screen.getByTestId('input_data');
+    userEvent.clear(input);
+    expect(input.getAttribute('value')).toEqual('24/11/2022');
   });
 
   test('deve renderizar com valor e alterar quando tiver máscara', () => {

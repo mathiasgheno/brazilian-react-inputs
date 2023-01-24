@@ -11,8 +11,10 @@ export function dataMask (value) {
 export const InputData = ({
   valor = '',
   onChange = () => {},
+  desabilitado = false,
 }) => {
   const [data, setData] = React.useState(valor);
+  const id = React.useId();
 
   React.useEffect(() => {
     setData(valor);
@@ -20,14 +22,15 @@ export const InputData = ({
 
   return (
     <>
-      <label htmlFor='data'>Data</label>
+      <label htmlFor={id}>Data</label>
       <br/>
       <input
         data-testid="input_data"
         type='text'
         name='data'
-        id='data'
+        id={id}
         value={dataMask(data)}
+        disabled={desabilitado}
         onChange={(e) => {
           onChange(e);
           setData(e.target.value);
