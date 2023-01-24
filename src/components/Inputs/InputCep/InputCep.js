@@ -9,10 +9,11 @@ export function cepMask (value) {
 
 export const InputCep = ({
    valor = '',
-   onChange = () => {}
+   onChange = () => {},
+   desabilitado = false,
 }) => {
   const [ cep, setCep ] = React.useState(valor);
-  const componentId = React.useId();
+  const id = React.useId();
 
   React.useEffect(() => {
     setCep(valor);
@@ -25,15 +26,17 @@ export const InputCep = ({
 
   return (
     <div>
-      <label htmlFor={componentId}>CEP</label>
+      <label htmlFor={id}>CEP</label>
       <br />
       <input
+        data-testid="input_cep"
         type='text'
         placeholder='00000-000'
-        id={componentId}
+        id={id}
         name='zipcode'
         value={cepMask(cep)}
         onChange={handleOnChangeCep}
+        disabled={desabilitado}
       />
     </div>
   )
