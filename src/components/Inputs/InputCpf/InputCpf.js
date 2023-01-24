@@ -12,8 +12,10 @@ export function cpfMask (value) {
 export const InputCpf = ({
   valor = '',
   onChange = () => {},
+  desabilitado = false,
 }) => {
   const [ cpf, setCpf ] = React.useState(valor);
+  const id = React.useId();
 
   React.useEffect(() => {
     setCpf(valor);
@@ -21,17 +23,20 @@ export const InputCpf = ({
 
   return (
     <>
-      <label htmlFor='cpf'>CPF: 00.000.000-00</label>
+      <label htmlFor={id}>CPF</label>
       <br/>
       <input
+        data-testid="input_cpf"
         type='text'
         name='cpf'
-        id='cpf'
+        id={id}
+        placeholder='00.000.000-00'
         value={cpfMask(cpf)}
         onChange={(e) => {
           setCpf(e.target.value);
           onChange(e);
         }}
+        disabled={desabilitado}
       />
     </>
   )

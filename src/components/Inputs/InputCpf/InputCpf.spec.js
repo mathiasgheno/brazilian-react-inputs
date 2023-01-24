@@ -1,11 +1,26 @@
-test.todo('deve aplicar mascara caso ocorra paste de 00000000000');
-test.todo('deve aplicar mascara caso ocorra paste de 000.000.000.00');
-test.todo('deve aplicar mascara quando usuário estiver digitando');
-test.todo('deve inicializar com valor zerado');
-test.todo('deve possibilitar a renderização de mais de um input do mesmo tipo');
-test.todo('deve aplicar foco no input caso label seja selecionado');
-test.todo('deve exibir mensagem de inválido');
-test.todo('deve desabilitar o input');
-test.todo('deve executar o onChange');
-test.todo('deve renderizar conteúdo do label conforme parametro');
-test.todo('deve exibir * quando input for exigido');
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { composeStories } from '@storybook/testing-react';
+import * as stories from './InputCpf.stories';
+import userEvent from '@testing-library/user-event';
+
+const { ComValor, Normal, Desabilitado } = composeStories(stories);
+
+describe('InputCpf', () => {
+  test('deve renderizar', () => {
+    render(<Normal />);
+  });
+
+  test('deve renderizar com valor', () => {
+    render(<ComValor />);
+    const cpf = screen.getByTestId('input_cpf');
+    expect(cpf.value).toBe('000.000.000-00');
+  });
+
+  test('não deve alterar valor', () => {
+    render(<Desabilitado />);
+    const cpf = screen.getByTestId('input_cpf');
+    userEvent.clear(cpf);
+    expect(cpf.value).toBe('000.000.000-00');
+  });
+});
