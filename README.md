@@ -1,7 +1,7 @@
 # brazilian-react-inputs
 
 [![Deploy](https://github.com/mathiasgheno/brazilian-react-inputs/actions/workflows/deploy.yml/badge.svg)](https://github.com/mathiasgheno/brazilian-react-inputs/actions/workflows/deploy.yml)
-<a href="http://mathiasgheno-brazilian-react-inputs-master.s3-website-sa-east-1.amazonaws.com" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
+<a href="https://mathiasgheno.github.io/brazilian-react-inputs" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
 
 Máscaras para formulário em React.js sem utilização de libs adicionais. Nesse projeto você irá encontrar components de input altamente coesos e sem acomplamento com outras libs.
 
